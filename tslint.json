@@ -1,0 +1,26 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "trailing-comma": [ false ],
+    "no-console": false,
+    "no-trailing-whitespace": false,
+    "variable-name": [
+      "allow-leading-underscore"
+    ],
+    "prefer-for-of": false,
+    "no-bitwise": false,
+    "only-arrow-functions": false,
+    "ban-types": {
+      "options": [
+        "Function"
+      ]
+    },
+    "max-classes-per-file": false
+  },
+  "rulesDirectory": [],
+  "module": "commonjs"
+}
