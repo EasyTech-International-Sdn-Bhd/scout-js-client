@@ -8,6 +8,7 @@
     "/dist"
   ],
   "scripts": {
+    "postinstall": "npx tsc",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
