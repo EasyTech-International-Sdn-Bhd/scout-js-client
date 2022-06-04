@@ -1,3 +1,3 @@
 export declare type TDynamicObject = {
-    [K: string]: number | string | Date | Array<any>;
+    [K: string]: number | string | Date | any[] | TDynamicObject;
 };
