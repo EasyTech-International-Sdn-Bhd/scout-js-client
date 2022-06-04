@@ -45,5 +45,6 @@ export type TIndexSearchResponse = {
     hits: number,
     nb_hits: number,
     data: TIndexSearchData[],
-    execution: string
+    execution: string,
+    fetch: string
 }

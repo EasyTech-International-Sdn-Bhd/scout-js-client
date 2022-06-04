@@ -39,4 +39,5 @@ export declare type TIndexSearchResponse = {
     nb_hits: number;
     data: TIndexSearchData[];
     execution: string;
+    fetch: string;
 };
