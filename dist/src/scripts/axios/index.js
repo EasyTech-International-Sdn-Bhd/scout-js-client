@@ -111,6 +111,9 @@ var Axios = /** @class */ (function () {
             return fail;
         });
     };
+    Axios.prototype.delete = function (endpoint) {
+        return this.axios.delete(endpoint);
+    };
     Axios.prototype.get = function (endpoint, data) {
         return this.axios.get(this._GET_param(endpoint, data));
     };

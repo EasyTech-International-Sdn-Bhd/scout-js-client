@@ -41,3 +41,20 @@ export declare type TIndexSearchResponse = {
     execution: string;
     fetch: string;
 };
+export declare type TIndexDeleteResponse = {
+    status: boolean;
+    execution: string;
+    fetch: string;
+};
+export declare type TIndexDataDeletionResponse = {
+    status: boolean;
+    uid: string;
+    execution: string;
+    fetch: string;
+};
+export declare type TIndexDataBatchDeletionResponse = {
+    status: boolean;
+    uid: string[];
+    execution: string;
+    fetch: string;
+};

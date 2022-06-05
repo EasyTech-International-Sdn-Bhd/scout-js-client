@@ -48,3 +48,23 @@ export type TIndexSearchResponse = {
     execution: string,
     fetch: string
 }
+
+export type TIndexDeleteResponse = {
+    status: boolean,
+    execution: string,
+    fetch: string
+}
+
+export type TIndexDataDeletionResponse = {
+    status: boolean,
+    uid: string,
+    execution: string,
+    fetch: string
+}
+
+export type TIndexDataBatchDeletionResponse = {
+    status: boolean,
+    uid: string[],
+    execution: string,
+    fetch: string
+}

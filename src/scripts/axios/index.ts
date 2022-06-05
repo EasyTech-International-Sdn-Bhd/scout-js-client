@@ -46,6 +46,9 @@ export default class Axios {
             return fail;
         });
     }
+    public delete(endpoint: string): AxiosPromise{
+        return this.axios.delete(endpoint);
+    }
     public get(endpoint: string, data?: any): AxiosPromise{
         return this.axios.get(this._GET_param(endpoint,data));
     }

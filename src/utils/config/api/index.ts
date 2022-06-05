@@ -4,5 +4,6 @@ export const ScoutEndPoints = {
     Post_Search: "/search",
     Post_Insert: "/insert",
     Post_BulkInsert: "/bulk_insert",
-    Put_Config: "/config"
+    Put_Config: "/config",
+    Delete_Index: "/delete"
 }

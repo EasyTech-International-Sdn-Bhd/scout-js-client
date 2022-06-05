@@ -87,6 +87,32 @@ var Scout = /** @class */ (function () {
             });
         });
     };
+    Scout.prototype.delete_index = function (name) {
+        var _this = this;
+        var now = (0, fetch_elapsed_1.default)();
+        return new Promise(function (resolve, reject) {
+            _this.api.delete("".concat(api_1.ScoutEndPoints.Delete_Index, "/").concat(name)).then(function (_a) {
+                var data = _a.data;
+                data.fetch = now.elapsed();
+                resolve(data);
+            }).catch(function (er) {
+                reject(er);
+            });
+        });
+    };
+    Scout.prototype.delete_index_data = function (name, uid) {
+        var _this = this;
+        var now = (0, fetch_elapsed_1.default)();
+        return new Promise(function (resolve, reject) {
+            _this.api.delete("".concat(api_1.ScoutEndPoints.Delete_Index, "/").concat(name, "/").concat(uid)).then(function (_a) {
+                var data = _a.data;
+                data.fetch = now.elapsed();
+                resolve(data);
+            }).catch(function (er) {
+                reject(er);
+            });
+        });
+    };
     return Scout;
 }());
 exports.default = Scout;

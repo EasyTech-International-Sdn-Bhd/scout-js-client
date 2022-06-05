@@ -13,6 +13,7 @@ export default class Axios {
     private _extra_headers;
     constructor(api_url?: string);
     source(api_url: string): void;
+    delete(endpoint: string): AxiosPromise;
     get(endpoint: string, data?: any): AxiosPromise;
     post(endpoint: string, data: TIndexData | TIndexDataBatch | TIndexSearch): AxiosPromise;
     put(endpoint: string, data: object): AxiosPromise;

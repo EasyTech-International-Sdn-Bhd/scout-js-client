@@ -5,4 +5,5 @@ export declare const ScoutEndPoints: {
     Post_Insert: string;
     Post_BulkInsert: string;
     Put_Config: string;
+    Delete_Index: string;
 };

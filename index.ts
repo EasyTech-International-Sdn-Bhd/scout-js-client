@@ -2,8 +2,8 @@ import {TIndexConfig, TIndexData, TIndexDataBatch, TIndexes, TIndexSearch} from 
 import {
     TIndexConfigResponse,
     TIndexDataBatchResponse,
-    TIndexDataCountResponse,
-    TIndexDataResponse, TIndexSearchResponse
+    TIndexDataCountResponse, TIndexDataDeletionResponse,
+    TIndexDataResponse, TIndexDeleteResponse, TIndexSearchResponse
 } from "./src/@types/TResponse";
 import Axios from "./src/scripts/axios";
 import {ScoutEndPoints} from "./src/utils/config/api";
@@ -76,6 +76,28 @@ export default class Scout {
         const now = performance();
         return new Promise<TIndexSearchResponse>((resolve: (param:TIndexSearchResponse)=>void, reject: (param:TError)=>void)=>{
             this.api.post(ScoutEndPoints.Post_Search,query).then(({data})=>{
+                data.fetch = now.elapsed();
+                resolve(data);
+            }).catch(er=>{
+                reject(er);
+            });
+        });
+    }
+    public delete_index(name: string): Promise<TIndexDeleteResponse>{
+        const now = performance();
+        return new Promise<TIndexDeleteResponse>((resolve: (param: TIndexDeleteResponse)=>void, reject: (param: TError)=>void)=>{
+            this.api.delete(`${ScoutEndPoints.Delete_Index}/${name}`).then(({data})=>{
+                data.fetch = now.elapsed();
+                resolve(data);
+            }).catch(er=>{
+                reject(er);
+            });
+        });
+    }
+    public delete_index_data(name: string, uid: string): Promise<TIndexDataDeletionResponse>{
+        const now = performance();
+        return new Promise<TIndexDataDeletionResponse>((resolve: (param: TIndexDataDeletionResponse)=>void, reject: (param: TError)=>void)=>{
+            this.api.delete(`${ScoutEndPoints.Delete_Index}/${name}/${uid}`).then(({data})=>{
                 data.fetch = now.elapsed();
                 resolve(data);
             }).catch(er=>{
