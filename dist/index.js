@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var axios_1 = require("./src/scripts/axios");
 var api_1 = require("./src/utils/config/api");
 var fetch_elapsed_1 = require("./src/utils/fetch_elapsed");
+var lodash_1 = require("lodash");
 var Scout = /** @class */ (function () {
     function Scout(server_address) {
         this.server_address = "";
@@ -15,8 +16,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.get(api_1.ScoutEndPoints.Get_Indexes).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (err) {
                 reject(err);
             });
@@ -28,8 +30,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.post(api_1.ScoutEndPoints.Post_Insert, object).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
@@ -41,8 +44,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.post(api_1.ScoutEndPoints.Post_BulkInsert, object).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
@@ -54,8 +58,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.put(api_1.ScoutEndPoints.Put_Config, object).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
@@ -67,8 +72,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.get("".concat(api_1.ScoutEndPoints.Get_Count, "/").concat(index), {}).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
@@ -80,8 +86,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.post(api_1.ScoutEndPoints.Post_Search, query).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
@@ -93,8 +100,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.delete("".concat(api_1.ScoutEndPoints.Delete_Index, "/").concat(name)).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
@@ -106,8 +114,9 @@ var Scout = /** @class */ (function () {
         return new Promise(function (resolve, reject) {
             _this.api.delete("".concat(api_1.ScoutEndPoints.Delete_Index, "/").concat(name, "/").concat(uid)).then(function (_a) {
                 var data = _a.data;
-                data.fetch = now.elapsed();
-                resolve(data);
+                var copy = (0, lodash_1.clone)(data);
+                copy.fetch = now.elapsed();
+                resolve(copy);
             }).catch(function (er) {
                 reject(er);
             });
